@@ -18,7 +18,7 @@ modules:
             dsn: 'mysql:host=localhost;dbname=circle_test'
             user: 'ubuntu'
             password: ''
-            dump: tests/_data/dump.
+            dump: tests/_data/dump.sql
             populate: false
             cleanup: false
             reconnect: false
