@@ -9,6 +9,9 @@ machine:
     CIRCLE_ENV: test
   php:
     version: 5.6.17
+database:
+  override:
+  - mysql -u ubuntu circle_test < tests/_bootstrap/dump.sql
 dependencies:
   pre:
     - sudo unlink /usr/lib/apache2/modules/libphp5.so
@@ -20,8 +23,8 @@ dependencies:
     # Enable mod_rewrite and restart Apache to apply changes.
     # sudo a2enmod rewrite;
     # Set up the app and prepare to test.
-    # - mysql -u root -e 'CREATE DATABASE PROJECT;'; zcat tests/_bootstrap/PROJECT.sql.gz | mysql -u root PROJECT;
-    # - cp app/sites/default/default.settings.php app/sites/default/settings.php;
+    # - mysql -u root -e 'CREATE DATABASE springboard;'; zcat tests/_bootstrap/springboard.sql.gz | mysql -u root springboard
+    - cp app/sites/default/default.settings.php app/sites/default/settings.php;
     # - mkdir app/sites/default/files && chmod -R 0777 app/sites/default/files;  
   post:
     - sudo cp -f circle.vhost /etc/apache2/sites-available/default
