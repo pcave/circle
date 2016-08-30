@@ -16,7 +16,7 @@ modules:
             # Codeception Db module will throw a segfault error for db dumps of 
             # any significant size; you're better off not using populate/cleanup 
             # options below and pre-loading directly.
-            dsn: 'mysql:host=127.0.0.1;dbname=springboard'
+            dsn: 'mysql:host=127.0.0.1;dbname=circle_test'
             user: 'ubuntu'
             password: ''
             dump: 'tests/_bootstrap/dump.sql'
