@@ -16,7 +16,7 @@ dependencies:
     # Use our cloned docroot instead of Circle's /var/www.
     - sudo cp -f circle.vhost /etc/apache2/sites-available/default;
     # Enable mod_rewrite and restart Apache to apply changes.
-    - sudo a2enmod rewrite;
+    # sudo a2enmod rewrite;
     - sudo service apache2 restart && php -v && php -m;
     # Set up the app and prepare to test.
     - mysql -u root -e 'CREATE DATABASE PROJECT;'; zcat tests/_bootstrap/PROJECT.sql.gz | mysql -u root PROJECT;
