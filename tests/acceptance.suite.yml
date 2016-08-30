@@ -21,6 +21,14 @@ modules:
             cookies: true
             window_size: 1024x768
             clear_cookies: true
+        Db:
+          dsn: 'mysql:host=127.0.0.1;dbname=circle_test'
+          user: 'ubuntu'
+          password: ''
+          dump: 'tests/_bootstrap/dump.sql'
+          populate: false
+          cleanup: false
+          reconnect: false
 
 Sustainers:
   sustainers_key_path: '/tmp'
