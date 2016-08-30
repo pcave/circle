@@ -1,12 +1,12 @@
 <VirtualHost *:80>
   ServerAdmin webmaster@localhost
 
-  DocumentRoot /home/ubuntu/northwest/docroot
+  DocumentRoot /home/ubuntu/circle/docroot
   <Directory />
     Options FollowSymLinks
     AllowOverride All
   </Directory>
-  <Directory /home/ubuntu/northwest/docroot/>
+  <Directory /home/ubuntu/circle/docroot/>
     Options Indexes FollowSymLinks MultiViews
     AllowOverride All
     Order allow,deny
