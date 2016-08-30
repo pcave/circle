@@ -17,11 +17,15 @@ dependencies:
     # sudo cp -f circle.vhost /etc/apache2/sites-available/default;
     # Enable mod_rewrite and restart Apache to apply changes.
     # sudo a2enmod rewrite;
-    - sudo service apache2 restart && php -v && php -m;
     # Set up the app and prepare to test.
-    - mysql -u root -e 'CREATE DATABASE PROJECT;'; zcat tests/_bootstrap/PROJECT.sql.gz | mysql -u root PROJECT;
-    - cp app/sites/default/default.settings.php app/sites/default/settings.php;
-    - mkdir app/sites/default/files && chmod -R 0777 app/sites/default/files;  
+    # - mysql -u root -e 'CREATE DATABASE PROJECT;'; zcat tests/_bootstrap/PROJECT.sql.gz | mysql -u root PROJECT;
+    # - cp app/sites/default/default.settings.php app/sites/default/settings.php;
+    # - mkdir app/sites/default/files && chmod -R 0777 app/sites/default/files;  
+    post:
+      - sudo cp -f circle.vhost /etc/apache2/sites-available/default;
+      - sudo a2enmod rewrite; 
+      - sudo service apache2 restart && php -v && php -m;
+
 test:
   override:
     - ./vendor/bin/drush status --root=./app --uri=localhost && ./vendor/bin/drush cc all --root=./app --uri=localhost;
