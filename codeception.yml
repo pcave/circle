@@ -8,14 +8,30 @@ paths:
 settings:
     bootstrap: _bootstrap.php
     colors: true
-    memory_limit: 1024M
+    memory_limit: 2048M
 extensions:
     enabled:
         - Codeception\Extension\RunFailed
 modules:
     config:
         Db:
-            dsn: ''
-            user: ''
+            dsn: 'mysql:host=localhost;dbname=circle_test'
+            user: 'ubuntu'
             password: ''
-            dump: tests/_data/dump.sql
+            dump: tests/_data/dump.
+            populate: false
+            cleanup: false
+            reconnect: false
+extensions:
+    enabled:
+        - No_populateGroup
+        - Codeception\Extension\Phantoman
+    config:
+        Codeception\Extension\Phantoman:
+            port: 4445
+            path: 'vendor/bin/phantomjs'
+            ignoreSslErrors: true
+            sslProtocol: any
+            webSecurity: false
+            suites: ['acceptance', 'acceptance (phantom)']
+envs: tests/_envs    

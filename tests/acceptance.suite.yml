@@ -7,6 +7,20 @@
 class_name: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: http://localhost
-        - \Helper\Acceptance
+        - Db
+        - REST:
+           depends: PhpBrowser
+        - WebDriver
+    config:
+        WebDriver:
+            url: 'http://localhost/'
+            browser: phantomjs
+            host: 127.0.0.1
+            port: 4445
+            restart: true
+            cookies: true
+            window_size: 1024x768
+            clear_cookies: true
+
+Sustainers:
+  sustainers_key_path: '/tmp'

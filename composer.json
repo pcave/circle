@@ -2,14 +2,17 @@
   "require": {
     "codeception/codeception": "2.*",
     "codeception/c3": "2.*",
-    "drush/drush": "7.*"
+    "drush/drush": "7.*",
+    "jonnyw/php-phantomjs": "3.*"
   },
   "scripts": {
     "post-install-cmd": [
-      "Codeception\\c3\\Installer::copyC3ToRoot"
+      "Codeception\\c3\\Installer::copyC3ToRoot",
+      "PhantomInstaller\\Installer::installPhantomJS"
     ],
     "post-update-cmd": [
-      "Codeception\\c3\\Installer::copyC3ToRoot"
+      "Codeception\\c3\\Installer::copyC3ToRoot",
+      "PhantomInstaller\\Installer::installPhantomJS"
     ]
   }
 }
