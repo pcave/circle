@@ -1,7 +1,5 @@
 {
   "require": {
-    "ext-xdebug": "2.*",
-    "phpunit/phpunit": "~4.7",
     "codeception/codeception": "2.*",
     "codeception/c3": "2.*",
     "drush/drush": "dev-master"
