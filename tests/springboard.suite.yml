@@ -1,6 +1,6 @@
 # Codeception Test Suite Configuration
 
-class_name: ActorPROJECT_CAMEL
+class_name: AcceptanceTester
 coverage:
   include:
     - docroot/*
