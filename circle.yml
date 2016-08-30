@@ -12,7 +12,7 @@ machine:
 dependencies:
   pre:  
     # Enable Xdebug extension.
-    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini;
+    # sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini;
     # Use our cloned docroot instead of Circle's /var/www.
     - sudo yes | cp -f circle.vhost /etc/apache2/sites-available/default;
     # Enable mod_rewrite and restart Apache to apply changes.
