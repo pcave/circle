@@ -31,7 +31,8 @@ dependencies:
     - sudo cp -f circle.vhost /etc/apache2/sites-available/default
     - sudo a2enmod rewrite
     - sudo service apache2 restart && php -v && php -m
-    - phantomjs --webdriver=4444
+    - phantomjs --webdriver=4445:
+           background: true
     #- wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
     #- java -jar selenium-server-standalone-2.44.0.jar:
     #      background: true
