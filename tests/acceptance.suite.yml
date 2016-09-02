@@ -1,6 +1,34 @@
-# Copy this file to acceptance.suite.yml and edit with your url.
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
 
+class_name: AcceptanceTester
 modules:
+    enabled:
+        - Db
+        - REST:
+           depends: PhpBrowser
+        - WebDriver
     config:
         WebDriver:
-            url: 'https://acceptance.local/'
+            url: 'http://localhost/'
+            browser: phantomjs
+            host: 127.0.0.1
+            port: 4445
+            restart: true
+            cookies: true
+            window_size: 1024x768
+            clear_cookies: true
+        Db:
+          dsn: 'mysql:host=127.0.0.1;dbname=circle_test'
+          user: 'ubuntu'
+          password: ''
+          dump: 'tests/_bootstrap/dump.sql'
+          populate: false
+          cleanup: false
+          reconnect: false
+
+Sustainers:
+  sustainers_key_path: '/tmp'
