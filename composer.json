@@ -7,11 +7,9 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "Codeception\\c3\\Installer::copyC3ToRoot",
       "PhantomInstaller\\Installer::installPhantomJS"
     ],
     "post-update-cmd": [
-      "Codeception\\c3\\Installer::copyC3ToRoot",
       "PhantomInstaller\\Installer::installPhantomJS"
     ]
   }
