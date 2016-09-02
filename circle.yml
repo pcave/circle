@@ -13,7 +13,7 @@ database:
   override:
   - mysql -u ubuntu circle_test < tests/_data/dump.sql
 dependencies:
-  override
+  override:
     - echo "date.timezone = America/New_York" > /opt/circleci/php/$(phpenv global)/etc/conf.d/date.ini
   pre:
     - sudo unlink /usr/lib/apache2/modules/libphp5.so
