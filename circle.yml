@@ -40,4 +40,4 @@ dependencies:
 test:
   override:
     - ./vendor/bin/drush status --root=./app --uri=localhost && ./vendor/bin/drush cc all --root=./app --uri=localhost
-    - ./vendor/bin/codecept --steps run
+    - ./vendor/bin/codecept --steps run tests/acceptance/fundraiser/SustainerManagementCept.php

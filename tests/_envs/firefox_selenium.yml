@@ -1,0 +1,12 @@
+modules:
+  config:
+      WebDriver:
+          browser: 'firefox'
+          port: 4444 #use selenium
+#          capabilities:
+#              acceptSslCerts: true
+#              marionette: true
+#              browserName: firefox
+#              ignoreSslErrors: true
+#              slProtocol: any
+#              webSecurity: false

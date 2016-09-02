@@ -1,0 +1,5 @@
+modules:
+  config:
+      WebDriver:
+          browser: 'phantomjs'
+          port: 4445
